@@ -1,0 +1,29 @@
+package com.bridgelabz.services;
+
+import java.util.List;
+
+import com.bridgelabz.model.User;
+
+public class UserServiceImpl implements UserService{
+
+	public boolean addEntity(User user) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public User getEntityById(int id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<User> getEntityList() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean deleteEntity(int id) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

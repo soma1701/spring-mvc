@@ -1,0 +1,15 @@
+package com.bridgelabz.services;
+
+import java.util.List;
+
+import com.bridgelabz.model.User;
+
+public class UserServiceImpl implements UserService{
+
+	public void register(User user) {
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+}

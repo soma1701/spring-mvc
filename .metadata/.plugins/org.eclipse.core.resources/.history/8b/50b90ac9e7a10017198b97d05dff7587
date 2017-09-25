@@ -1,0 +1,42 @@
+package com.bridgelabz.validator;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.SystemEnvironmentPropertySource;
+
+import com.bridgelabz.model.User;
+
+public class RegistrationValidation {
+
+	public void validator(User user) {
+		String regexForEmail = "/^[a-z0-9]+@[a-z]+.[a-z]{3}/";
+		String regexForName="[A-Za-z]{3}";
+		String regexForMobNo="[0-9]{11}";
+		String regexForPassword="[A-Za-z0-9]";
+		
+		if(user.getFirstName()=="") {
+			System.err.println("your name can't be empty");
+		}else if(regexForName.matches(user.getFirstName())){
+			System.err.println("your name must be character");
+		}else if(user.getLastName()=="") {
+				System.err.println("your name can't be empty");
+		}else if(regexForName.matches(user.getFirstName())){
+				System.err.println("your name must be character");
+		}else if(regexForEmail.matches(user.getEmail())) {
+			System.err.println("enter only character");
+		}else if(user.getLastName()==""){
+			System.out.println("your name can't be empty");
+		}else if(user.getLastName()==""||user.getLastName()==null) {
+			System.out.println("your last name can't be empty");
+		}else if(user.getLastName().length()<3) {
+			System.out.println("please enter atleast three character:");
+		}else if(user.getEmail()==""||user.getEmail()==null) {
+			System.out.println("email can't be empty");
+		}
+		
+		
+		return null;
+		return null;
+	}
+	
+
+}

@@ -1,0 +1,29 @@
+package com.bridgelabz.dao;
+
+import java.util.List;
+
+import com.bridgelabz.model.User;
+
+public class UserDaoImpl implements UserDao{
+
+	public boolean addEntity(User employee) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public User getEntityById(int id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<User> getEntityList() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean deleteEntity(int id) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

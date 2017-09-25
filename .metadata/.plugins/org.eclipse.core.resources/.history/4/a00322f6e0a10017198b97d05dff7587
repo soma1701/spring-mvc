@@ -1,0 +1,12 @@
+package com.bridgelabz.validator;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.bridgelabz.model.User;
+
+public class RegistrationValidation {
+	@Autowired
+	private User user;
+	
+
+}

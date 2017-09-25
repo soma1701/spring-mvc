@@ -1,0 +1,18 @@
+package com.bridgelabz.model;
+
+import org.springframework.http.HttpStatus;
+
+public class ErrorMessage {
+	
+	HttpStatus errorMsg;
+
+	public HttpStatus getErrorMsg() {
+		return errorMsg;
+	}
+
+	public void setErrorMsg(HttpStatus errorMsg) {
+		this.errorMsg = errorMsg;
+	}
+	
+
+}

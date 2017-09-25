@@ -1,0 +1,50 @@
+package com.bridgelabz.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.bridgelabz.model.ErrorMessage;
+import com.bridgelabz.model.User;
+import com.bridgelabz.services.UserService;
+import com.bridgelabz.validator.RegistrationValidation;
+
+@RestController
+public class UserCredential {
+
+	@Autowired
+	RegistrationValidation registerValidation;
+	
+	@Autowired
+	ErrorMessage errorMessage;
+	
+
+	@Autowired
+	UserService userService;
+	
+		 @RequestMapping(value = "/create", method = RequestMethod.POST)  
+		 public ResponseEntity<String>  register(@RequestBody User user) {  
+		  try { 
+			  
+			  boolean regvValid = registerValidation.validator(user);
+			  if(regvValid) 
+			  userService.register(user); 
+			  else {
+				  return new ResponseEntity<String>("incorrect format",HttpStatus.BAD_GATEWAY);
+			  }
+		  } catch (Exception e) {
+			  e.printStackTrace();
+			  return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
+		   // e.printStackTrace();  
+		  }
+		return new ResponseEntity<String>(HttpStatus.OK);  
+		 
+	
+		 }	
+
+}

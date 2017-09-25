@@ -1,0 +1,23 @@
+package com.bridgelabz.dao;
+
+import javax.transaction.Transaction;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class UserDaoImpl implements UserDao{
+	@Autowired  
+	 SessionFactory sessionFactory;  
+	  
+	 Session session = null;  
+	 Transaction tx = null;  
+
+	public void register() {
+		session =sessionFactory.openSession();
+		
+		// TODO Auto-generated method stub
+		
+	}
+ 
+}

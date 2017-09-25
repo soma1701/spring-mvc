@@ -1,0 +1,38 @@
+package com.bridgelabz.dao;
+
+import javax.transaction.HeuristicMixedException;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.bridgelabz.model.User;
+
+public class UserDaoImpl implements UserDao{
+	@Autowired  
+	 SessionFactory sessionFactory;  
+	  
+	 Session session = null;  
+	 Transaction tx = null;  
+	 
+	public void register(User user) {
+		session =sessionFactory.openSession();
+		session = sessionFactory.openSession();  
+		  tx = (Transaction) session.beginTransaction();  
+		  session.save(user);  
+		  try {
+			tx.commit();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		  session.close();  
+		  
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+ 
+}

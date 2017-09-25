@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/home/bridgeit/Documents/todoApp/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2774810561.index
+3271851407.index
+1384828684.index
+3742061490.index
+3886659263.index
+3563948688.index

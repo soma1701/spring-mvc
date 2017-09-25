@@ -1,0 +1,26 @@
+package com.bridgelabz.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserCredential {
+	@Autowired
+	UserService userService;
+	
+		 @RequestMapping(value = "/create", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)  
+		 public @ResponseBody  
+		 Status addEmployee(@RequestBody Employee employee) {  
+		  try {  
+		   dataServices.addEntity(employee);  
+		   return new Status(1, "Employee added Successfully !");  
+		  } catch (Exception e) {  
+		   // e.printStackTrace();  
+		   return new Status(0, e.toString());  
+		  }  
+		  
+		 }  
+	
+	
+
+}

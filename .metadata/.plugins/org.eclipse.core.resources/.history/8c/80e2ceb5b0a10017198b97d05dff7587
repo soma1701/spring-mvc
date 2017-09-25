@@ -1,0 +1,10 @@
+package com.bridgelabz.services;
+
+public interface UserService {
+	
+	public boolean addEntity(User user) throws Exception;  
+	 public User getEntityById(int id) throws Exception;  
+	 public List<user> getEntityList() throws Exception;  
+	 public boolean deleteEntity(long id) throws Exception;  
+
+}

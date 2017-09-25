@@ -1,0 +1,34 @@
+package com.bridgelabz.validator;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.SystemEnvironmentPropertySource;
+
+import com.bridgelabz.model.User;
+
+public class RegistrationValidation {
+
+	public RegistrationValidation validator(User user) {
+		String regexForEmail = "/^[a-z0-9]+@[a-z]+.[a-z]{3}/";
+		String regexForFirstName="[A-Za-z] {3}";
+		String regexForLastName="[A-Za-z] {3}";
+		String regexForMobNo="[0-9] {11}";
+		
+		if(user.getFirstName().length()<3) {
+			System.out.println("please enter atleast three character:");
+		}else if(user.getFirstName()==""||user.getFirstName()=="null"){
+			System.out.println("your name can't be empty");
+		}else if(user.getLastName()==""||user.getLastName()==null) {
+			System.out.println("your last name can't be empty");
+		}else if(user.getLastName().length()<3) {
+			System.out.println("please enter atleast three character:");
+		}else if(user.getEmail()==""||user.getEmail()==null) {
+			System.out.println("email can't be empty");
+		}
+		
+		
+		return null;
+		return null;
+	}
+	
+
+}

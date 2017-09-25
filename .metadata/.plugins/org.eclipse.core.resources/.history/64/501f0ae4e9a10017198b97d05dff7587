@@ -1,0 +1,43 @@
+package com.bridgelabz.validator;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.SystemEnvironmentPropertySource;
+
+import com.bridgelabz.model.User;
+
+public class RegistrationValidation {
+
+	public boolean validator(User user) {
+		String regexForEmail = "/^[a-z0-9]+@[a-z]+.[a-z]{3}/";
+		String regexForName="[A-Za-z]{3}";
+		String regexForMobNo="[0-9]{11}";
+		String regexForPassword="[A-Za-z0-9] {3}";
+		
+		if(user.getFirstName()=="") {
+			System.err.println("your firstName can't be empty");
+			return false;
+		}else if(regexForName.matches(user.getFirstName())){
+			System.err.println("your firstName must be character");
+			return false;
+		}else if(user.getLastName()=="") {
+				System.err.println("your lastName can't be empty");
+				return false;
+		}else if(regexForName.matches(user.getFirstName())){
+				System.err.println("your lastName must be character");
+				return false;
+		}else if(regexForEmail.matches(user.getEmail())) {
+			System.err.println("your email is not valid");
+			return false;
+		}else if(regexForMobNo.matches(user.getMobNo())){
+			System.err.println("your mob no should be number and 10 digit");
+			return false;
+		}else if(regexForPassword.matches(user.getPassword())) {
+			System.err.println("your password ");
+			return false;
+		}
+		
+		
+	}
+	
+
+}
